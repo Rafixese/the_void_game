@@ -6,9 +6,9 @@
 \contentsline {subsection}{\numberline {2.2}Zasoby}{5}%
 \contentsline {subsection}{\numberline {2.3}Baza}{6}%
 \contentsline {subsection}{\numberline {2.4}Łaziki}{7}%
-\contentsline {subsection}{\numberline {2.5}Mapa}{7}%
-\contentsline {subsection}{\numberline {2.6}Pogoda}{7}%
-\contentsline {subsection}{\numberline {2.7}Cykl dnia i nocy}{7}%
-\contentsline {subsection}{\numberline {2.8}Badania}{7}%
-\contentsline {subsection}{\numberline {2.9}Cele gry}{7}%
-\contentsline {section}{\numberline {3}Programowanie łazików}{7}%
+\contentsline {subsection}{\numberline {2.5}Mapa}{9}%
+\contentsline {subsection}{\numberline {2.6}Pogoda}{9}%
+\contentsline {subsection}{\numberline {2.7}Cykl dnia i nocy}{9}%
+\contentsline {subsection}{\numberline {2.8}Badania}{9}%
+\contentsline {subsection}{\numberline {2.9}Cele gry}{9}%
+\contentsline {section}{\numberline {3}Programowanie łazików}{9}%

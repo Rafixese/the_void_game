@@ -97,9 +97,41 @@ Budynki, które gracz będzie mógł rozmieszczać i budować na mapie to:
 \begin{itemize}
 	\item Garaże łazików - będą służyły jako miejsce pojawiania się nowych łazików oraz schronienie dla nich podczas nieprzyjaznych warunków pogodowych.
 	\item Maszty komunikacyjne - z racji braku łączności ze sztucznymi satelitami Marsa (o ile takie istnieją) gracz musi zapewnić naziemny system łączności. Maszty będą miały ograniczony zasięg, dla uproszczenia w kształcie kwadratu np. o boku 51 jednostek. W zasięgu masztów będą mogły się poruszać łaziki. Zasięg radiowy jest im niezbędny do orientacji w terenie. W przypadku wyjechania poza obszar objęty zasięgiem radiowym masztu łazik nie będzie otrzymywał danych lokalizacyjnych i zatrzyma się w miejscu. Ważne będzie, aby programowo zabezpieczać łaziki przed wyjechaniem poza zasięg sygnału.
-	\item FOV - ang. forward operating base - wysunięta baza operacyjna będzie funkcjonalnością przypominać moduł główny, ale za to będzie się różnić wyglądem. Będzie pozwalać na zakładanie baz oddalonych od miejsca lądowania.
+	\item FOV - ang. forward operating base - wysunięta baza operacyjna będzie funkcjonalnością przypominać moduł główny, ale za to będzie się różnić wyglądem. Będzie pozwalać na zakładanie baz oddalonych od miejsca lądowania. Różnicą będzie dostępność ograniczonego magazynu na zasoby i wodę. FOV będzie punktem zbiorczym dla zasobów pozyskiwanych w okolicy bazy operacyjnej, dzięki czemu łaziki z ładunkiem nie będą musiały wracać do bazy początkowej. Konieczne będzie zaprogramowanie łazików-tragarzy, które będą opróżniały ograniczony magazyn FOV'ów i dostarczały zasoby do magazynów głównych.
 \end{itemize}
 \subsection{Łaziki}
+Łaziki będą odgrywały kluczową rolę w całej grze. Będą one kluczowe do pozyskiwania, transportu zasobów i w późniejszym okresie do poszukiwania mikroorganizmów.
+
+Przykładowe zadania łazików:
+\begin{itemize}
+	\item Wyszukiwanie lokalizacji zasobów na powierzchni
+	\item Wyszukiwanie lokalizacji zasobów pod powierzchnią
+	\item Wydobywanie zasobów na powierzchni
+	\item Wydobywanie zasobów pod powierzchnią
+	\item Transport zasobów z FOV'ów do głównej bazy
+	\item Wyszukiwanie mikroorganizmów
+	\item Zdalna budowa budynków
+\end{itemize}
+
+Łaziki będą mogły być wyposażone w różne narzędzia, takie jak:
+\begin{itemize}
+	\item Kamera (domyślnie) - pozwala na obserwację łazika z głównego modułu bazy lub FOV
+	\item Wiertło (domyślnie) - pozwala na wydobywanie surowców. W celu identyfikacji źródła zasobów na początku rozgrywki łazik będzie musiał wydobyć próbkę materiału (jeśli nie jest wyposażony w skaner), żeby dowiedzieć się jakie zasoby znajdują się w miejscu, z którego pobrał próbkę.
+	\item Wiertło podziemne - pozwala na wydobycie surowców (głównie wody) znajdujących się pod powierzchnią. Jeśli łazik nie jest wyposażony w skaner jest to też sposób na odkrycie czy pod powierzchnią znajdują się zasoby i jakiego są rodzaju.
+	\item Skaner naziemny - ułatwia wyszukiwanie źródeł zasobów znajdujących się na powierzchni. Łazik musi podjechać do badanego obiektu, aby przeprowadzić badanie.
+	\item Skaner podziemny - ułatwia wyszukiwanie źródeł zasobów znajdujących się na powierzchni. Łazik musi znaleźć się nad badanym obszarem, aby przeprowadzić badanie.
+	\item Skaner mikroorganizmów - działa na powierzchni oraz pod powierzchnią. Pozwala na identyfikację mikroorganizmów w danym złożu zasobów (głównie w źródłach wody).
+\end{itemize}
+
+Łaziki będą przechowywały informacje o ich stanie:
+\begin{itemize}
+	\item Pozycja X i Y względem punktu $<0,0>$
+	\item Temperatura otoczenia
+	\item Stan baterii
+	\item Warunki pogodowe oddziaływujące na łazik
+\end{itemize}
+
+
 \subsection{Mapa}
 \subsection{Pogoda}
 \subsection{Cykl dnia i nocy}
