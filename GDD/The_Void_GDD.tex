@@ -134,6 +134,29 @@ Przykładowe zadania łazików:
 
 Do łazików będzie można dołączać wózki na zasoby. Będą one gromadziły zebrane przez łazik zasoby i miały ograniczoną pojemność.
 \subsection{Mapa}
+Mapa w grze będzie miała obrazować powierzchnię Marsa z losowo generowanymi zasobami naziemnymi i podziemnymi. 
+
+Na biegunach mapy (czyli w punktach daleko wysuniętych od $y = 0$ i bliskimi do punktów końcowych mapy $y\_max$ i $-y\_max$) będą znajdowały się czapy lodowe, z których będzie można pozyskiwać lód w celu produkcji wody. Dodatkowo na biegunach pokrytych lodem nie będą pojawiać się żadne naziemne ani podziemne zasoby.
+
+Generowanie zasobów podziemnych i naziemnych będzie dochodziło przy spełnieniu założeń:
+\begin{itemize}
+	\item Zasoby muszą być rozrzucone po mapie
+	\item Dwa różne rodzaje zasobów muszą być oddalone od siebie o określoną odległość
+	\item Zasób będzie generowany w skupisku. Skupisko zasobów będzie zajmowało określoną ilość pól na mapie i będą generowane tak, żeby każde pole z zasobem sąsiadowało przynajmniej jednym bokiem pola z drugim polem, na którym znajduje się zasób. 
+	\item Wielkość zasobu będzie losowana z przedziału minimalnej i maksymalnej ilości jednostek zasobów w skupisku.
+	\item Zasób nie znajduje się na pokrywie lodowej na biegunach.
+\end{itemize}
+
+Gra będzie przechowywała tablice złóż zasobów:
+\begin{itemize}
+	\item Zasobów na powierzchni
+	\item Zasobów pod powierzchnią
+	\item Zasobów lodu na biegunach
+\end{itemize}
+
+Ponadto można wyszczególnić zasoby, które zostały odkryte przez gracza oraz te, które nie zostały odkryte (w przypadku zasobów wymagających użycia skanera). Do dyspozycji gracza będzie tylko lista z odkrytymi przez niego zasobami.
+
+Podobnie jak w przypadku zasobów gra będzie przechowywała listę budynków gracza.
 \subsection{Pogoda}
 \subsection{Cykl dnia i nocy}
 \subsection{Badania}
