@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.8)  8 OCT 2020 22:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.8)  10 OCT 2020 12:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -144,7 +144,7 @@ LaTeX Font Info:    External font `plex10' loaded for size
 \openout3 = `The_Void_GDD.toc'.
 
  [2] [3]
-Overfull \hbox (1.90636pt too wide) in paragraph at lines 38--39
+Overfull \hbox (1.90636pt too wide) in paragraph at lines 39--40
 []\OT4/cmr/m/n/12 Gracz b¦-dzie mógª r¦cz-nie wy-do-by-wa¢ za-so-by znaj-du-j¡-
 ce si¦ na po-wierzch-
  []
@@ -157,7 +157,7 @@ Here is how much of TeX's memory you used:
  15737 multiletter control sequences out of 15000+600000
  543771 words of font info for 57 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 24i,6n,27p,2564b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 24i,6n,27p,2564b,221s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/ganja/.texlive2019/texmf-var/fonts/pk
 /ljfour/jknappen/ec/tcrm1200.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvi
 ps/pl/plmi.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}</usr
@@ -165,7 +165,7 @@ ps/pl/plmi.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}</usr
 texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/pl/plr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/p
 l/plr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr17.pfb>
-Output written on The_Void_GDD.pdf (6 pages, 51058 bytes).
+Output written on The_Void_GDD.pdf (6 pages, 51638 bytes).
 PDF statistics:
  50 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream
