@@ -3,6 +3,11 @@
 \usepackage{polski}
 \usepackage{indentfirst}
 \usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 \author{Hrabia Rafał, Ananicz Marcel}
 \title{
@@ -154,10 +159,26 @@ Gra będzie przechowywała tablice złóż zasobów:
 	\item Zasobów lodu na biegunach
 \end{itemize}
 
-Ponadto można wyszczególnić zasoby które zostały odkryte przez gracza oraz te, które nie zostały odkryte (w przypadku zasobów wymagających użycia skanera).
+Ponadto można wyszczególnić zasoby, które zostały odkryte przez gracza oraz te, które nie zostały odkryte (w przypadku zasobów wymagających użycia skanera). Do dyspozycji gracza będzie tylko lista z odkrytymi przez niego zasobami.
 
 Podobnie jak w przypadku zasobów gra będzie przechowywała listę budynków gracza.
 \subsection{Pogoda}
+Zmienne pogodowe:
+\begin{itemize}
+	\item Temperatura będzie liniowo zmieniana w stosunku do pozycji $y$. Zakres temperatur to $+27^{\circ}C$ na równiku ($y = 0$) do $-133^{\circ}C$ na końcu biegunów ($|y| = y\_max$).\\
+	Temperatura będzie obliczana z następującego wzoru:
+	\begin{equation}
+	\label{eqn:Wzór na temperaturę}
+	temp = \ceil[\bigg]{-160\frac{|y|}{y\_max} + 27} [^{\circ}C]
+	\end{equation}
+	gdzie:\\
+	\begin{tabular}{l l l}
+	$y$ & - & odległość punktu od równika\\
+	$y\_max$ & - & maksymalna możliwa odległość punktu od równika
+	\end{tabular}
+	\vspace{1em} \\ Niskie temperatury będą mogły wpływać na gracza oraz łaziki.
+	\item Burze piaskowe
+\end{itemize}
 \subsection{Cykl dnia i nocy}
 \subsection{Badania}
 \subsection{Cele gry}
