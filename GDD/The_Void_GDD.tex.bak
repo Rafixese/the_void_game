@@ -7,7 +7,11 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage{caption}
+\usepackage{hyperref}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 
 \author{Hrabia Rafał, Ananicz Marcel}
 \title{
@@ -17,6 +21,8 @@ The\_Void Game \\
 Grupa czwartek 14:30
 }
 \date{8 października 2020}
+
+\captionsetup{skip=2pt,font=scriptsize,justification=raggedright,singlelinecheck=false}
 
 \begin{document}
 \maketitle
@@ -162,6 +168,23 @@ Gra będzie przechowywała tablice złóż zasobów:
 Ponadto można wyszczególnić zasoby, które zostały odkryte przez gracza oraz te, które nie zostały odkryte (w przypadku zasobów wymagających użycia skanera). Do dyspozycji gracza będzie tylko lista z odkrytymi przez niego zasobami.
 
 Podobnie jak w przypadku zasobów gra będzie przechowywała listę budynków gracza.
+
+Pozostaje problem sposobu zapętlenia mapy, tak aby w jakimś stopniu symulowała ona sferę a nie ograniczoną płaszczyznę. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.1]{sphere}
+	\caption{Sfera. Źródło: \url{http://wikipedia.org}}
+\end{figure}
+
+Najważniejsze jest, aby umożliwić podróż wzdłuż równoleżników, natomiast symulacja podróży wzdłuż południków mogłaby być kłopotliwa do zrealizowania zakładając, że mapa jest ograniczoną płaszczyzną w kształcie kwadratu. Dlatego w ramach uproszczenia i częściowego zrealizowania działania mapy imitujący planetę mapa zostanie zapętlona wzdłuż granicznych "południków" tak, że logicznie przyjmie formę walca bez podstaw (czegoś na kształt rury).
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{walec}
+	\caption{Sposób zwinięcia mapy w kształt walca. Źródło: \url{http://www.dachy.info.pl}}
+\end{figure}
+
+Oczywiście zwinięcie mapy w kształt walca w
 \subsection{Pogoda}
 Zmienne pogodowe:
 \begin{itemize}
@@ -177,7 +200,7 @@ Zmienne pogodowe:
 	$y\_max$ & - & maksymalna możliwa odległość punktu od równika
 	\end{tabular}
 	\vspace{1em} \\ Niskie temperatury będą mogły wpływać na gracza oraz łaziki.
-	\item Burze piaskowe
+	\item Burze piaskowe będą przeszkadzać w łączności z łazikami. Wystąpienie burzy piaskowej będzie określone pewnym prawdopodobieństwem.
 \end{itemize}
 \subsection{Cykl dnia i nocy}
 \subsection{Badania}

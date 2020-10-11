@@ -1,14 +1,14 @@
-\contentsline {section}{\numberline {1}Wstęp}{3}%
-\contentsline {subsection}{\numberline {1.1}Skrócony opis}{3}%
-\contentsline {subsection}{\numberline {1.2}Backstory}{4}%
-\contentsline {section}{\numberline {2}Świat Gry}{4}%
-\contentsline {subsection}{\numberline {2.1}Gracz}{4}%
-\contentsline {subsection}{\numberline {2.2}Zasoby}{5}%
-\contentsline {subsection}{\numberline {2.3}Baza}{6}%
-\contentsline {subsection}{\numberline {2.4}Łaziki}{7}%
-\contentsline {subsection}{\numberline {2.5}Mapa}{9}%
-\contentsline {subsection}{\numberline {2.6}Pogoda}{10}%
-\contentsline {subsection}{\numberline {2.7}Cykl dnia i nocy}{10}%
-\contentsline {subsection}{\numberline {2.8}Badania}{10}%
-\contentsline {subsection}{\numberline {2.9}Cele gry}{10}%
-\contentsline {section}{\numberline {3}Programowanie łazików}{10}%
+\contentsline {section}{\numberline {1}Wstęp}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Skrócony opis}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Backstory}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Świat Gry}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Gracz}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Zasoby}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Baza}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Łaziki}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Mapa}{9}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Pogoda}{10}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Cykl dnia i nocy}{11}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Badania}{11}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Cele gry}{11}{subsection.2.9}%
+\contentsline {section}{\numberline {3}Programowanie łazików}{11}{section.3}%
