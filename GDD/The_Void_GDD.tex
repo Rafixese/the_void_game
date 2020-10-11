@@ -191,7 +191,7 @@ Zmienne pogodowe:
 	\item Temperatura będzie liniowo zmieniana w stosunku do pozycji $y$. Zakres temperatur to $+27^{\circ}C$ na równiku ($y = 0$) do $-133^{\circ}C$ na końcu biegunów ($|y| = y\_max$).\\
 	Temperatura będzie obliczana z następującego wzoru:
 	\begin{equation}
-	\label{eqn:Wzór na temperaturę}
+	\label{eqn:tempeq}
 	temp = \ceil[\bigg]{-160\frac{|y|}{y\_max} + 27} [^{\circ}C]
 	\end{equation}
 	gdzie:\\
@@ -203,6 +203,11 @@ Zmienne pogodowe:
 	\item Burze piaskowe będą przeszkadzać w łączności z łazikami. Wystąpienie burzy piaskowej będzie określone pewnym prawdopodobieństwem.
 \end{itemize}
 \subsection{Cykl dnia i nocy}
+W cyklu dnia i nocy zostanie pominięty czynnik jakim jest przechylenie osi planety względem osi orbity wokół Słońca z racji uproszczenia mechaniki gry. Dzień i noc będą zajmowały po połowie długości doby. Długość doby zostanie określona na podstawie doświadczeń z wczesnych wersji gry.
+
+Podczas nocy temperatura wynikająca ze wzoru \ref{eqn:tempeq} będzie dodatkowo pomniejszana o zadaną ilość stopni tak, aby utrudnić graczowi rozgrywkę nawet w niedalekiej odległości od równika.
+
+Temperatura panująca w dzień będzie równa temperaturze wynikającej ze wzoru \ref{eqn:tempeq}.
 \subsection{Badania}
 \subsection{Cele gry}
 \section{Programowanie łazików}

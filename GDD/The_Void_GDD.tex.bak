@@ -184,7 +184,7 @@ Najważniejsze jest, aby umożliwić podróż wzdłuż równoleżników, natomia
 	\caption{Sposób zwinięcia mapy w kształt walca. Źródło: \url{http://www.dachy.info.pl}}
 \end{figure}
 
-Oczywiście zwinięcie mapy w kształt walca w
+Oczywiście zwinięcie mapy w kształt walca w świecie gry realizowanym w 2D nie jest możliwe. Zostanie to zrealizowane poprzez niewidoczny dla gracza teleport z punktu $x\_max$ do punktu $-x\_max$ i na odwrót.
 \subsection{Pogoda}
 Zmienne pogodowe:
 \begin{itemize}
@@ -203,6 +203,9 @@ Zmienne pogodowe:
 	\item Burze piaskowe będą przeszkadzać w łączności z łazikami. Wystąpienie burzy piaskowej będzie określone pewnym prawdopodobieństwem.
 \end{itemize}
 \subsection{Cykl dnia i nocy}
+W cyklu dnia i nocy zostanie pominięty czynnik jakim jest przechylenie osi planety względem osi orbity wokół Słońca z racji uproszczenia mechaniki gry. Dzień i noc będą zajmowały po połowie długości doby. Długość doby zostanie określona na podstawie doświadczeń z wczesnych wersji gry.
+
+Podczas nocy temperatura wynikająca 
 \subsection{Badania}
 \subsection{Cele gry}
 \section{Programowanie łazików}
