@@ -10,5 +10,5 @@
 \contentsline {subsection}{\numberline {2.6}Pogoda}{10}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Cykl dnia i nocy}{11}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Badania}{11}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Cele gry}{11}{subsection.2.9}%
-\contentsline {section}{\numberline {3}Programowanie łazików}{11}{section.3}%
+\contentsline {subsection}{\numberline {2.9}Cele gry}{12}{subsection.2.9}%
+\contentsline {section}{\numberline {3}Programowanie łazików}{12}{section.3}%
