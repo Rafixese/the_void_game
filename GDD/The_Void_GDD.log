@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.8)  12 OCT 2020 18:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.8)  12 OCT 2020 18:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -482,7 +482,7 @@ ce si¦ na po-wierzch-
  []
 
 [4] [5] [6] [7] [8]
-<./images/sphere.png, id=115, 1204.5pt x 1204.5pt>
+<./images/sphere.png, id=120, 1204.5pt x 1204.5pt>
 File: ./images/sphere.png Graphic file (type png)
 <use ./images/sphere.png>
 Package pdftex.def Info: ./images/sphere.png  used on input line 176.
@@ -497,28 +497,35 @@ LaTeX Font Info:    External font `plex10' loaded for size
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./images/walec.jpg, id=118, 434.62375pt x 175.65625pt>
+<./images/walec.jpg, id=123, 434.62375pt x 175.65625pt>
 File: ./images/walec.jpg Graphic file (type jpg)
 <use ./images/walec.jpg>
 Package pdftex.def Info: ./images/walec.jpg  used on input line 183.
 (pdftex.def)             Requested size: 217.31134pt x 87.8279pt.
 [9] [10 <./images/sphere.png> <./images/walec.jpg>] [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 254.
- [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 254.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 255.
+ [12] [13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 255.
 
 (./The_Void_GDD.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 254.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 254.
-Package rerunfilecheck Info: File `The_Void_GDD.out' has not changed.
-(rerunfilecheck)             Checksum: D28B2A73F71EF7F8FD2E186D1675F517;780.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 254.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 255.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 255.
+
+
+Package rerunfilecheck Warning: File `The_Void_GDD.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `The_Void_GDD.out':
+(rerunfilecheck)             Before: 4D22F77551BEA7F8BB1E44BB8D18FF76;834
+(rerunfilecheck)             After:  EB685CA5DCF0B60896C94FF47AC6D95A;839.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 255.
  ) 
 Here is how much of TeX's memory you used:
- 8302 strings out of 483148
- 127531 string characters out of 5965416
+ 8305 strings out of 483148
+ 127558 string characters out of 5965416
  377141 words of memory out of 5000000
- 23117 multiletter control sequences out of 15000+600000
+ 23118 multiletter control sequences out of 15000+600000
  548193 words of font info for 76 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  41i,11n,42p,2562b,503s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -535,10 +542,10 @@ ive/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/pl/plr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy8.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/pl/pltt8.pfb>
-Output written on The_Void_GDD.pdf (12 pages, 845218 bytes).
+Output written on The_Void_GDD.pdf (13 pages, 845941 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 209 PDF objects out of 1000 (max. 8388607)
+ 178 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
+ 131 words of extra memory for PDF output out of 10000 (max. 10000000)
 
