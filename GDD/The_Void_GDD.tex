@@ -113,6 +113,8 @@ Budynki, które gracz będzie mógł rozmieszczać i budować na mapie to:
 \subsection{Łaziki}
 Łaziki będą odgrywały kluczową rolę w całej grze. Będą one kluczowe do pozyskiwania, transportu zasobów i w późniejszym okresie do poszukiwania mikroorganizmów.
 
+Łaziki będą programowalne poprzez umieszczanie napisanych przez gracza skryptów w wyznaczonym folderze w głównym folderze zawierającym grę lub innym. Programowanie łazików zostało omówione w sekcji \ref{section:programming}.
+
 Przykładowe zadania łazików:
 \begin{itemize}
 	\item Wyszukiwanie lokalizacji zasobów na powierzchni
@@ -124,26 +126,15 @@ Przykładowe zadania łazików:
 	\item Zdalna budowa budynków
 \end{itemize}
 
-Łaziki będą mogły być wyposażone w różne narzędzia, takie jak:
-\begin{itemize}
-	\item Kamera (domyślnie) - pozwala na obserwację łazika z głównego modułu bazy lub FOV
-	\item Wiertło (domyślnie) - pozwala na wydobywanie surowców. W celu identyfikacji źródła zasobów na początku rozgrywki łazik będzie musiał wydobyć próbkę materiału (jeśli nie jest wyposażony w skaner), żeby dowiedzieć się jakie zasoby znajdują się w miejscu, z którego pobrał próbkę.
-	\item Wiertło podziemne - pozwala na wydobycie surowców (głównie wody) znajdujących się pod powierzchnią. Jeśli łazik nie jest wyposażony w skaner jest to też sposób na odkrycie czy pod powierzchnią znajdują się zasoby i jakiego są rodzaju.
-	\item Skaner naziemny - ułatwia wyszukiwanie źródeł zasobów znajdujących się na powierzchni. Łazik musi podjechać do badanego obiektu, aby przeprowadzić badanie.
-	\item Skaner podziemny - ułatwia wyszukiwanie źródeł zasobów znajdujących się na powierzchni. Łazik musi znaleźć się nad badanym obszarem, aby przeprowadzić badanie.
-	\item Skaner mikroorganizmów - działa na powierzchni oraz pod powierzchnią. Pozwala na identyfikację mikroorganizmów w danym złożu zasobów (głównie w źródłach wody).
-\end{itemize}
-
 Łaziki będą przechowywały informacje o ich stanie:
 \begin{itemize}
 	\item Pozycja X i Y względem punktu $<0,0>$
 	\item Temperatura otoczenia
 	\item Stan baterii
 	\item Warunki pogodowe oddziaływujące na łazik
-	\item Czy podczepiono wózek na zasoby
 \end{itemize}
 
-Do łazików będzie można dołączać wózki na zasoby. Będą one gromadziły zebrane przez łazik zasoby i miały ograniczoną pojemność.
+Poszczególne rodzaje łazików zostały omówione w sekcji \ref{section:research}.
 \subsection{Mapa}
 Mapa w grze będzie miała obrazować powierzchnię Marsa z losowo generowanymi zasobami naziemnymi i podziemnymi. 
 
@@ -209,6 +200,7 @@ Podczas nocy temperatura wynikająca ze wzoru \ref{eqn:tempeq} będzie dodatkowo
 
 Temperatura panująca w dzień będzie równa temperaturze wynikającej ze wzoru \ref{eqn:tempeq}.
 \subsection{Badania}
+\label{section:research}
 Moduł główny będzie wyposażony w Naukową Sieć Neuronową, dalej zwana NSN, która będzie zaawansowanym CPU odpowiadającym za opracowywanie nowych technologii, będzie to np. dodatkowy budynek na mapie. Będzie dostępnych kilka jej poziomów. Po rozpoczęciu gry NSN będzie na poziomie pierwszym, ulepszenie do kolejnych poziomów będzie kosztowne i będzie wymagało zbadania określonej liczby organizmów żywych, ale pozwoli na opracowanie kolejnych technologii.
 
 \vspace{1em}
@@ -251,5 +243,6 @@ Wyszczególnione poziomy zaawansowania technologicznego NSN:
 \end{itemize}
 \subsection{Cele gry}
 \section{Programowanie łazików}
+\label{section:programming}
 \section{Pomysły na rozwój}
 \end{document}

@@ -6,10 +6,10 @@
 \contentsline {subsection}{\numberline {2.2}Zasoby}{5}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Baza}{6}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Łaziki}{7}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Mapa}{9}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.5}Mapa}{8}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Pogoda}{10}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Cykl dnia i nocy}{11}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}Badania}{11}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Cele gry}{13}{subsection.2.9}%
-\contentsline {section}{\numberline {3}Programowanie łazików}{13}{section.3}%
-\contentsline {section}{\numberline {4}Pomysły na rozwój}{13}{section.4}%
+\contentsline {subsection}{\numberline {2.7}Cykl dnia i nocy}{10}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Badania}{10}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Cele gry}{12}{subsection.2.9}%
+\contentsline {section}{\numberline {3}Programowanie łazików}{12}{section.3}%
+\contentsline {section}{\numberline {4}Pomysły na rozwój}{12}{section.4}%

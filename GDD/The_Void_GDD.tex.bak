@@ -124,16 +124,6 @@ Przykładowe zadania łazików:
 	\item Zdalna budowa budynków
 \end{itemize}
 
-Łaziki będą mogły być wyposażone w różne narzędzia, takie jak:
-\begin{itemize}
-	\item Kamera (domyślnie) - pozwala na obserwację łazika z głównego modułu bazy lub FOV
-	\item Wiertło (domyślnie) - pozwala na wydobywanie surowców. W celu identyfikacji źródła zasobów na początku rozgrywki łazik będzie musiał wydobyć próbkę materiału (jeśli nie jest wyposażony w skaner), żeby dowiedzieć się jakie zasoby znajdują się w miejscu, z którego pobrał próbkę.
-	\item Wiertło podziemne - pozwala na wydobycie surowców (głównie wody) znajdujących się pod powierzchnią. Jeśli łazik nie jest wyposażony w skaner jest to też sposób na odkrycie czy pod powierzchnią znajdują się zasoby i jakiego są rodzaju.
-	\item Skaner naziemny - ułatwia wyszukiwanie źródeł zasobów znajdujących się na powierzchni. Łazik musi podjechać do badanego obiektu, aby przeprowadzić badanie.
-	\item Skaner podziemny - ułatwia wyszukiwanie źródeł zasobów znajdujących się na powierzchni. Łazik musi znaleźć się nad badanym obszarem, aby przeprowadzić badanie.
-	\item Skaner mikroorganizmów - działa na powierzchni oraz pod powierzchnią. Pozwala na identyfikację mikroorganizmów w danym złożu zasobów (głównie w źródłach wody).
-\end{itemize}
-
 Łaziki będą przechowywały informacje o ich stanie:
 \begin{itemize}
 	\item Pozycja X i Y względem punktu $<0,0>$
@@ -209,6 +199,7 @@ Podczas nocy temperatura wynikająca ze wzoru \ref{eqn:tempeq} będzie dodatkowo
 
 Temperatura panująca w dzień będzie równa temperaturze wynikającej ze wzoru \ref{eqn:tempeq}.
 \subsection{Badania}
+\label{section:research}
 Moduł główny będzie wyposażony w Naukową Sieć Neuronową, dalej zwana NSN, która będzie zaawansowanym CPU odpowiadającym za opracowywanie nowych technologii, będzie to np. dodatkowy budynek na mapie. Będzie dostępnych kilka jej poziomów. Po rozpoczęciu gry NSN będzie na poziomie pierwszym, ulepszenie do kolejnych poziomów będzie kosztowne i będzie wymagało zbadania określonej liczby organizmów żywych, ale pozwoli na opracowanie kolejnych technologii.
 
 \vspace{1em}
@@ -237,18 +228,19 @@ Wyszczególnione poziomy zaawansowania technologicznego NSN:
 	\end{itemize}
 	\item Poziom 3 (30 zbadanych organizmów):
 	\begin{itemize}
-		\item Łazik: advanced explorer - potrafi szukać zasobów pod powierzchnią i na powierzchni szybciej
-		\item Łazik: advanced drill - potrafi wydobywać zasoby pod powierzchnią i na powierzchni szybciej
+		\item Łazik: advanced explorer - potrafi szukać zasobów pod powierzchnią i na powierzchni, szybciej od odpowiednika z poziomu 2.
+		\item Łazik: advanced drill - potrafi wydobywać zasoby pod powierzchnią i na powierzchni, szybciej od odpowiednika z poziomu 2.
 		\item Łazik: advanced builder - potrafi wybudować lepsze budynki (te z 3 poziomu badań)
-		\item Łazik: transporter - potrafi transportować więcej materiałów z FOV
+		\item Łazik: transporter - potrafi transportować więcej materiałów z FOV od odpowiednika z poziomu 2.
 		\item Budynek: reduktor kolizji - na określonym obszarze ochrania pozostałe budynki przed burzami piaskowymi, co eliminuje konieczność ich naprawy
 		\item Jeszcze kilka budynków pojawi się w tym miejscu, kiedy będą pomysły
 		\item Zwiększony kompresor wody
 		\item Zwiększony kompresor tlenu
 		\item Zaawansowane ogrzewanie skafandra
-		\item Na tym poziomie może nastąpić np. odkrycie cywilizacji pod powierzchnią, którą trzeba będzie pokonać w celu ukończenia gry lub jakieś inne odkrycie nadające cel rozgrywce
+		\item (Na tym poziomie może nastąpić np. odkrycie cywilizacji pod powierzchnią, którą trzeba będzie pokonać w celu ukończenia gry lub jakieś inne odkrycie nadające cel rozgrywce)
 	\end{itemize}
 \end{itemize}
 \subsection{Cele gry}
 \section{Programowanie łazików}
+\section{Pomysły na rozwój}
 \end{document}
