@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Objects/Rock.tscn" type="PackedScene" id=3]
+
+[node name="World" type="YSort"]
+light_mask = 0
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 274.357, 178.898 )
+
+[node name="Rock" parent="." instance=ExtResource( 3 )]
+position = Vector2( 109.438, 137.887 )
+
+[node name="Rock2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 162.471, 222.033 )
