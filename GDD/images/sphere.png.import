@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/sphere.png-fcb279b6b250d4d0a60a945e8f6535b2.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://the_void_game-dev/GDD/images/sphere.png"
+dest_files=[ "res://.import/sphere.png-fcb279b6b250d4d0a60a945e8f6535b2.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

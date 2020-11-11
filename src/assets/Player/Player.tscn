@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/Player/Player.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 9.50737
+radius = 4.47485
 height = 0.0
 
 [sub_resource type="Animation" id=2]
@@ -200,8 +200,8 @@ start_node = "Idle"
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.673428, -26.3048 )
-scale = Vector2( 0.381114, 0.381114 )
+position = Vector2( -0.540996, -9.81691 )
+scale = Vector2( 0.147287, 0.147287 )
 texture = ExtResource( 1 )
 vframes = 4
 hframes = 4
@@ -227,6 +227,3 @@ active = true
 parameters/playback = SubResource( 23 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( -0.00169492, 0 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true

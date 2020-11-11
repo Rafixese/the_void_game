@@ -18,10 +18,6 @@ _global_script_class_icons={
 config/name="The_Void"
 run/main_scene="res://assets/World/World.tscn"
 
-[autoload]
-
-Console="*res://addons/quentincaffeino-console/src/Console.tscn"
-
 [display]
 
 window/size/width=800
@@ -29,10 +25,6 @@ window/size/height=450
 window/size/test_width=1280
 window/size/test_height=720
 window/stretch/mode="2d"
-
-[editor_plugins]
-
-enabled=PoolStringArray( "quentincaffeino-console" )
 
 [rendering]
 
