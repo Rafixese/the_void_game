@@ -1,0 +1,246 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://assets/dune2000-xppack/2character 001 RMXP.PNG" type="Texture" id=1]
+[ext_resource path="res://assets/Objects/Bolid.gd" type="Script" id=2]
+[ext_resource path="res://assets/dune2000-xppack/frame.PNG" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 18.9668, 15.5629 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "ride_down"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "ride_left"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "ride_right"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "ride_up"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 15 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "stay_down"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "stay_left"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "stay_right"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "stay_up"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "ride_up"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "ride_left"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "ride_right"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "ride_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=14]
+blend_point_0/node = SubResource( 10 )
+blend_point_0/pos = Vector2( 0, -1 )
+blend_point_1/node = SubResource( 11 )
+blend_point_1/pos = Vector2( -0.9, 0 )
+blend_point_2/node = SubResource( 12 )
+blend_point_2/pos = Vector2( 0.9, 0 )
+blend_point_3/node = SubResource( 13 )
+blend_point_3/pos = Vector2( 0, 1 )
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "stay_down"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "stay_up"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "stay_left"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "stay_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=19]
+blend_point_0/node = SubResource( 15 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 16 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 17 )
+blend_point_2/pos = Vector2( -1, 0 )
+blend_point_3/node = SubResource( 18 )
+blend_point_3/pos = Vector2( 1, 0 )
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachine" id=22]
+states/ride/node = SubResource( 14 )
+states/ride/position = Vector2( 543, 100 )
+states/stay/node = SubResource( 19 )
+states/stay/position = Vector2( 345, 100 )
+transitions = [ "stay", "ride", SubResource( 20 ), "ride", "stay", SubResource( 21 ) ]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
+
+[sub_resource type="CircleShape2D" id=24]
+radius = 42.2258
+
+[node name="Bolid" type="KinematicBody2D"]
+input_pickable = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 2
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( -0.379394, 1.2527 )
+shape = SubResource( 1 )
+
+[node name="AnimationBolid" type="AnimationPlayer" parent="."]
+anims/ride_down = SubResource( 2 )
+anims/ride_left = SubResource( 3 )
+anims/ride_right = SubResource( 4 )
+anims/ride_up = SubResource( 5 )
+anims/stay_down = SubResource( 6 )
+anims/stay_left = SubResource( 7 )
+anims/stay_right = SubResource( 8 )
+anims/stay_up = SubResource( 9 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 22 )
+anim_player = NodePath("../AnimationBolid")
+active = true
+parameters/playback = SubResource( 23 )
+parameters/ride/blend_position = Vector2( 0, 0 )
+parameters/stay/blend_position = Vector2( 0, 0 )
+
+[node name="box" type="Sprite" parent="."]
+position = Vector2( -0.518797, 1.5749 )
+scale = Vector2( 0.286662, 0.286662 )
+texture = ExtResource( 3 )
+
+[node name="Detect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+shape = SubResource( 24 )
+[connection signal="input_event" from="." to="." method="_on_Bolid_input_event"]
