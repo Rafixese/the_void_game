@@ -25,6 +25,10 @@ func register_commands():
 			.set_description('Sets user script for choosen rover. Takes %name% parameter, without extension or path.')\
 			.add_argument('name', TYPE_STRING)\
 			.register()
+	Console.add_command('spawn_rover', self, 'spawn_rover')\
+			.set_description('Spawns rover. Takes 1 argument: %name% - name of node.')\
+			.add_argument('name', TYPE_STRING)\
+			.register()
 	
 func print_rovers():
 	var rovers = get_tree().get_nodes_in_group("rovers")
@@ -55,3 +59,16 @@ func execute_rover_script():
 
 func set_user_script(name):
 	choosen_rover.set_user_script(name)
+	
+func spawn_rover(name):
+	var new_rover = load("res://assets/rovers/rover.tscn")
+	new_rover = new_rover.instance()
+	new_rover.set_name(name)
+	var rand = RandomNumberGenerator.new()
+	rand.randomize()
+	var x_offset = rand.randf_range(-50, 50)
+	rand.randomize()
+	var y_offset = rand.randf_range(-5, 5)
+	new_rover.position.x = 9741 + x_offset
+	new_rover.position.y = 9493 + y_offset
+	add_child_below_node(self.get_node("rovers_y_sort"), new_rover)

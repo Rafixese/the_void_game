@@ -16,6 +16,7 @@ var user_script
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("rovers")
+	get_node("Label").set_text(get_name())
 	
 func set_user_script(name):
 	user_script = load("res://scripts/user/{name}.gd".format({"name":name}))
@@ -50,6 +51,18 @@ func move_horizontally(x_offset):
 			pass
 	else:
 		input_movement.x = -1
+		while(global_position.x > destination_pos):
+			pass
+	input_movement.x = 0
+	
+func move_vertically(y_offset):
+	var destination_pos = global_position.y + y_offset
+	if y_offset > 0:
+		input_movement.y = 1
+		while(global_position.x < destination_pos):
+			pass
+	else:
+		input_movement.y = -1
 		while(global_position.x > destination_pos):
 			pass
 	input_movement.x = 0

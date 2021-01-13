@@ -7,7 +7,6 @@
 extents = Vector2( 20.8638, 12.1179 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-position = Vector2( 401.546, 206.766 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -19,3 +18,16 @@ hframes = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 3.3371 )
 shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -68.0
+margin_top = -46.0
+margin_right = 68.0
+margin_bottom = -20.0
+size_flags_stretch_ratio = 0.0
+text = "Rover"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
