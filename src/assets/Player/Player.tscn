@@ -230,3 +230,33 @@ parameters/Walk/blend_position = Vector2( -0.00169492, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -388.871
+margin_top = -218.814
+margin_right = -330.871
+margin_bottom = -204.814
+text = "HP = 100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = -388.067
+margin_top = -202.39
+margin_right = -272.067
+margin_bottom = -188.39
+text = "Water Level = 100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = -388.067
+margin_top = -182.591
+margin_right = -272.067
+margin_bottom = -168.591
+text = "Heat Level = 100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
