@@ -7,6 +7,7 @@ radius = 21.9313
 height = 42.8204
 
 [node name="Node2D" type="StaticBody2D"]
+scale = Vector2( 5, 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.353561, -18.9151 )
