@@ -71,4 +71,4 @@ func spawn_rover(name):
 	var y_offset = rand.randf_range(-5, 5)
 	new_rover.position.x = 9741 + x_offset
 	new_rover.position.y = 9493 + y_offset
-	add_child_below_node(self.get_node("YSort").get_node("rovers_y_sort"), new_rover)
+	add_child_below_node(self.get_node("rovers_y_sort"), new_rover)

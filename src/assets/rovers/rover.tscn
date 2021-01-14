@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/utils/warning.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20.8638, 12.1179 )
+extents = Vector2( 20.8638, 15.6841 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -17,7 +17,7 @@ vframes = 4
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 3.3371 )
+position = Vector2( 0, -1.1174 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
