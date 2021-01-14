@@ -66,17 +66,21 @@ func move_horizontally(x_offset, cancel_on_collision=true, on_collision = null):
 	if x_offset > 0:
 		input_movement.x = 1
 		while(global_position.x < destination_pos):
-			if cancel_on_collision and !collision_objects.empty():
+			if !collision_objects.empty():
 				if on_collision != null:
 					on_collision.call_func(self)
-				break
+					input_movement.x = 1
+				if cancel_on_collision:
+					break
 	else:
 		input_movement.x = -1
 		while(global_position.x > destination_pos):
-			if cancel_on_collision and !collision_objects.empty():
+			if !collision_objects.empty():
 				if on_collision != null:
 					on_collision.call_func(self)
-				break
+					input_movement.x = -1
+				if cancel_on_collision:
+					break
 	input_movement.x = 0
 	
 func move_vertically(y_offset, cancel_on_collision = true, on_collision = null):
@@ -84,15 +88,19 @@ func move_vertically(y_offset, cancel_on_collision = true, on_collision = null):
 	if y_offset > 0:
 		input_movement.y = 1
 		while(global_position.y < destination_pos):
-			if cancel_on_collision and !collision_objects.empty():
+			if !collision_objects.empty():
 				if on_collision != null:
 					on_collision.call_func(self)
-				break
+					input_movement.y = 1
+				if cancel_on_collision:
+					break
 	else:
 		input_movement.y = -1
 		while(global_position.y > destination_pos):
-			if cancel_on_collision and !collision_objects.empty():
+			if !collision_objects.empty():
 				if on_collision != null:
 					on_collision.call_func(self)
-				break
+					input_movement.y = -1
+				if cancel_on_collision:
+					break
 	input_movement.y = 0
