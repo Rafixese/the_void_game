@@ -13,6 +13,10 @@ var input_movement = Vector2.ZERO
 var collision_objects = []
 var warning_indicator_sprite
 
+var target_radius = 50  # Stop when this close to target.
+var target = null setget set_target  # Set this to move.
+var selected = false setget set_selected  # Is this unit selected?
+
 var user_script
 
 
@@ -22,6 +26,17 @@ func _ready():
 	get_node("Label").set_text(get_name())
 	warning_indicator_sprite = get_node("warning")
 	warning_indicator_sprite.visible = false
+	
+func set_selected(value):
+	# Draw a highlight around the unit if it's selected.
+	selected = value
+	if selected:
+		$Sprite.material.set_shader_param("aura_width", 1)
+	else:
+		$Sprite.material.set_shader_param("aura_width", 0)
+		
+func set_target(value):
+	target = value
 	
 func set_user_script(name):
 	user_script = load("res://scripts/user/{name}.gd".format({"name":name}))
@@ -41,6 +56,12 @@ func _physics_process(delta):
 	input_vector.y = input_movement.y
 	input_vector = input_vector.normalized()
 	
+	if target:
+		# If there's a target, move toward it.
+		velocity = position.direction_to(target)
+		if position.distance_to(target) < target_radius:
+			target = null
+			
 	if input_vector != Vector2.ZERO:
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 	else:

@@ -3,9 +3,60 @@ extends Node2D
 #console helpers
 var choosen_rover
 
+var dragging = false  # Are we currently dragging?
+var selected = []  # Array of selected units.
+var drag_start = Vector2.ZERO  # Location where drag began.
+var drag_stop = Vector2.ZERO
+var select_rect = RectangleShape2D.new()  # Collision shape for drag box.
+
+onready var rectd = $Node2D/selection
+
 func _ready():
 	# CONSOLE SETUP
 	register_commands()
+	
+func _process(delta):
+	if dragging:
+		draw_area(drag_start, get_global_mouse_position())
+	else:
+		draw_area(Vector2.ZERO, Vector2.ZERO, false)
+	
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+		var camera_position = $YSort/Player/Camera2D.get_camera_screen_center() - get_viewport_rect().size / 2  
+		if event.pressed:
+			dragging = true
+			drag_start = event.position
+			drag_start.x += camera_position.x
+			drag_start.y += camera_position.y
+		elif dragging:
+			dragging = false
+			update()
+			var drag_end = event.position
+			drag_end.x += camera_position.x
+			drag_end.y += camera_position.y
+			select_rect.extents = (drag_end - drag_start) / 2# Button released while dragging.
+			var space = get_world_2d().direct_space_state
+			var query = Physics2DShapeQueryParameters.new()
+			query.set_shape(select_rect)
+			query.transform = Transform2D(0, (drag_end + drag_start) / 2)
+			selected = space.intersect_shape(query)
+			print(selected)
+
+			dragging = false
+	if event is InputEventMouseMotion and dragging:
+		update()
+
+func draw_area(startv, endv, s = true):
+	rectd.rect_size = Vector2(abs(startv.x-endv.x), abs(startv.y - endv.y))
+	
+	var pos = Vector2()
+	pos.x = min(startv.x, endv.x)
+	pos.y = min(startv.y, endv.y)
+	rectd.rect_position = pos
+	
+	rectd.rect_size *= int(s) # true = 1 and false = 0
+
 	
 func register_commands():
 	Console.add_command('print_rovers', self, 'print_rovers')\
