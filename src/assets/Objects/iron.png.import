@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/1health-bar-png_1087821.png-29522f38d9a2f466091e7f37c0f9ff4e.stex"
+path="res://.import/iron.png-d6e1e8ad165f7474a00ec1bbbc3a2d02.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Player/Lifebar/1health-bar-png_1087821.png"
-dest_files=[ "res://.import/1health-bar-png_1087821.png-29522f38d9a2f466091e7f37c0f9ff4e.stex" ]
+source_file="res://assets/Objects/iron.png"
+dest_files=[ "res://.import/iron.png-d6e1e8ad165f7474a00ec1bbbc3a2d02.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

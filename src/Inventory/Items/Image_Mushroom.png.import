@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Spaceship.png-39d72feeaa74e6522a8bcc4cfdbd66b1.stex"
+path="res://.import/Image_Mushroom.png-d2687abd26d07a3f92f05d96e1a20b0a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Spaceship.png"
-dest_files=[ "res://.import/Spaceship.png-39d72feeaa74e6522a8bcc4cfdbd66b1.stex" ]
+source_file="res://Inventory/Items/Image_Mushroom.png"
+dest_files=[ "res://.import/Image_Mushroom.png-d2687abd26d07a3f92f05d96e1a20b0a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/2png-transparent-brown-rock-illustration-pixel-art-sprite-rocks-brown-painting-8bit-color.png-f596d41861bd4f832e3ab074d99192f4.stex"
+path="res://.import/Building1.png-b7d205099fc24100e776af57444a79b4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/2png-transparent-brown-rock-illustration-pixel-art-sprite-rocks-brown-painting-8bit-color.png"
-dest_files=[ "res://.import/2png-transparent-brown-rock-illustration-pixel-art-sprite-rocks-brown-painting-8bit-color.png-f596d41861bd4f832e3ab074d99192f4.stex" ]
+source_file="res://assets/Objects/Building1.png"
+dest_files=[ "res://.import/Building1.png-b7d205099fc24100e776af57444a79b4.stex" ]
 
 [params]
 

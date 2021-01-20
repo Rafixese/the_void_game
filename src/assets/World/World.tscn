@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=2]
+[gd_scene load_steps=128 format=2]
 
 [ext_resource path="res://assets/Tilesets/background.png" type="Texture" id=1]
 [ext_resource path="res://assets/Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/Objects/Rock2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/Tilesets/Mountain.png" type="Texture" id=10]
 [ext_resource path="res://assets/World/World.gd" type="Script" id=11]
+[ext_resource path="res://assets/UI/Interface.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 32, 128, 32, 32, 128, 32 )
@@ -3669,11 +3670,17 @@ position = Vector2( 9500, 9200 )
 position = Vector2( 9516.97, 9450.32 )
 
 [node name="Spaceship" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 9770.11, 9273.54 )
+position = Vector2( 9778.87, 9277.35 )
 
 [node name="Rock3" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 9526.87, 9539.41 )
 rotation = -0.261799
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 9748.9, 9482.84 )
+position = Vector2( 9726.63, 9452.55 )
+
+[node name="Interface2" parent="YSort/Player" instance=ExtResource( 12 )]
+margin_left = -398.882
+margin_top = -221.545
+margin_right = -398.882
+margin_bottom = -221.545
