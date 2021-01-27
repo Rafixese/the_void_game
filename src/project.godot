@@ -9,12 +9,12 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
+"base": "Node",
 "class": "IItem",
 "language": "GDScript",
 "path": "res://Inventory/Items/IItem.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "Inventory_Component",
 "language": "GDScript",
 "path": "res://Inventory/InventoryComponent.gd"

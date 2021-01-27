@@ -2,10 +2,14 @@ extends KinematicBody2D
 
 class_name Rover
 
+var storage = {"test_resource": 0}
 
 const MAX_SPEED = 200
 const ACCELERATION = 1000
 const FRICTION = 1000
+
+const MINEABLE_DIST = 100
+const INVENTORY_SIZE = 10
 
 var velocity = Vector2.ZERO
 var input_movement = Vector2.ZERO
@@ -125,3 +129,46 @@ func move_vertically(y_offset, cancel_on_collision = true, on_collision = null):
 				if cancel_on_collision:
 					break
 	input_movement.y = 0
+	
+func detect_mineables():
+	var mineables = []
+	var bodies = $Area2D.get_overlapping_bodies()
+	for body in bodies:
+		if body.is_in_group("mineable"):
+			print(body.name)
+			print(body.global_position.x)
+			print(body.global_position.y)
+			mineables.append(body)
+	return mineables
+			
+func is_in_mine_range(mineable_obj):
+	var distance = global_position.distance_to(mineable_obj.global_position)
+	if distance <= MINEABLE_DIST:
+		return true
+	else:
+		return false
+
+func is_storage_full():
+	var sum = 0
+	for item in storage:
+		sum += storage[item]
+	
+	return sum >= INVENTORY_SIZE
+
+func mine(mineable_obj):
+	if not is_storage_full():
+		if is_in_mine_range(mineable_obj):
+			if mineable_obj.mine():
+				print("Mining 1 resource \'{resource_type}\'. {amount} unit(s) left.".format({"resource_type": mineable_obj.get_resource_type(), "amount": mineable_obj.get_resource_amount_left()}))
+				storage[mineable_obj.get_resource_type()] += 1
+				print("Now I have {amount} of {resource_type} in my inventory :D".format({"resource_type": mineable_obj.get_resource_type(), "amount": storage[mineable_obj.get_resource_type()]}))
+				return true
+			else:
+				print("Can't mine.")
+				return false
+		else:
+			print("Not in range.")
+			return false
+	else:
+		print("Storage is full.")
+		return false
