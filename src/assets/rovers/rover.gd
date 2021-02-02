@@ -23,6 +23,8 @@ var selected = false setget set_selected  # Is this unit selected?
 
 var user_script
 
+var res_bin
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,6 +32,8 @@ func _ready():
 	get_node("Label").set_text(get_name())
 	warning_indicator_sprite = get_node("warning")
 	warning_indicator_sprite.visible = false
+	res_bin = get_tree().get_root().find_node("res_bin", true, false)
+	print(res_bin.global_position)
 	
 func set_selected(value):
 	# Draw a highlight around the unit if it's selected.
@@ -160,6 +164,7 @@ func mine(mineable_obj):
 		if is_in_mine_range(mineable_obj):
 			if mineable_obj.mine():
 				print("Mining 1 resource \'{resource_type}\'. {amount} unit(s) left.".format({"resource_type": mineable_obj.get_resource_type(), "amount": mineable_obj.get_resource_amount_left()}))
+				OS.delay_msec(1000)
 				storage[mineable_obj.get_resource_type()] += 1
 				print("Now I have {amount} of {resource_type} in my inventory :D".format({"resource_type": mineable_obj.get_resource_type(), "amount": storage[mineable_obj.get_resource_type()]}))
 				return true
@@ -171,4 +176,15 @@ func mine(mineable_obj):
 			return false
 	else:
 		print("Storage is full.")
+		return false
+
+func loadout():
+	if is_in_mine_range(res_bin):
+		print("LOADOUT!")
+		print(storage)
+		res_bin.supply(storage)
+		for key in storage:
+			storage[key] = 0
+	else:
+		print("Not in range.")
 		return false

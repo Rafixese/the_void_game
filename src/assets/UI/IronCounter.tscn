@@ -48,7 +48,7 @@ margin_top = -11.5
 margin_right = 52.0
 margin_bottom = 11.5
 theme = SubResource( 1 )
-text = "1000"
+text = "0"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

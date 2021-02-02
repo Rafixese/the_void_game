@@ -11,6 +11,8 @@ var select_rect = RectangleShape2D.new()  # Collision shape for drag box.
 
 onready var rectd = $Node2D/selection
 
+var global_storage = {"test_resource": 0}
+
 func _ready():
 	# CONSOLE SETUP
 	register_commands()

@@ -30,3 +30,7 @@ func _physics_process(delta):
 		
 	velocity = move_and_slide(velocity)
 
+
+
+func _on_res_bin_global_storage_changed():
+	pass # Replace with function body.
