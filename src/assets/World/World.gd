@@ -158,9 +158,6 @@ func spawn_rover(name):
 	new_rover.position.y = 9493 + y_offset
 	add_child_below_node(self.get_node("rovers_y_sort"), new_rover)
 	
-	
-
-
 func _on_Building1_pressed():
 	$tower_placement.clear()
 	if test_resource>99:
