@@ -13,7 +13,7 @@ var invalid_tiles
 var building = StaticBody2D.new()
 
 onready var rectd = $Node2D/selection
-onready var tower = preload("res://assets/Objects/Building1.tscn")
+onready var tower = load("res://assets/Objects/Building1.tscn")
 
 var global_storage = {"test_resource": 0}
 
@@ -33,7 +33,7 @@ func _unhandled_input(event):
 	var camera_position = $YSort/Player/Camera2D.get_camera_screen_center() - get_viewport_rect().size / 2
 	if event is InputEventMouseMotion and can_place_tower:
 		$tower_placement.clear()
-		var tile = $TileMap.world_to_map(event.position + camera_position)
+		var tile = $tower_placement.world_to_map(event.position + camera_position)
 		
 		if not tile in invalid_tiles:
 			$tower_placement.set_cell(tile.x, tile.y, 1)
@@ -41,7 +41,8 @@ func _unhandled_input(event):
 			$tower_placement.set_cell(tile.x, tile.y, 0)
 	
 	elif event is InputEventMouseButton and can_place_tower and event.pressed:
-		var tile = $TileMap.world_to_map(event.position + camera_position)
+		var tile = $tower_placement.world_to_map(event.position + camera_position)
+		print(tile.x, ", ", tile.y)
 		
 		if not tile in invalid_tiles:
 			can_place_tower = false
@@ -51,7 +52,9 @@ func _unhandled_input(event):
 			
 			var tower_instance = tower.instance()
 			tower_instance.position = tile
-			add_child(tower_instance)
+			tower_instance.position.x+=tile.x*31
+			tower_instance.position.y+=tile.y*31
+			$YSort.add_child(tower_instance)
 	
 	elif event is InputEventMouseButton and event.button_index == BUTTON_LEFT: 
 		if event.pressed:
@@ -160,4 +163,5 @@ func spawn_rover(name):
 
 func _on_Building1_pressed():
 	$tower_placement.clear()
-	can_place_tower = !can_place_tower
+	if test_resource>99:
+		can_place_tower = !can_place_tower
