@@ -9,24 +9,12 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
-"class": "IItem",
-"language": "GDScript",
-"path": "res://Inventory/Items/IItem.gd"
-}, {
-"base": "Reference",
-"class": "Inventory_Component",
-"language": "GDScript",
-"path": "res://Inventory/InventoryComponent.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Rover",
 "language": "GDScript",
 "path": "res://assets/rovers/rover.gd"
 } ]
 _global_script_class_icons={
-"IItem": "",
-"Inventory_Component": "",
 "Rover": ""
 }
 

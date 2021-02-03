@@ -8,12 +8,18 @@ var selected = []  # Array of selected units.
 var drag_start = Vector2.ZERO  # Location where drag began.
 var drag_stop = Vector2.ZERO
 var select_rect = RectangleShape2D.new()  # Collision shape for drag box.
+var can_place_tower = false
+var invalid_tiles
+var building = StaticBody2D.new()
 
 onready var rectd = $Node2D/selection
+onready var tower = preload("res://assets/Objects/Building1.tscn")
 
 func _ready():
 	# CONSOLE SETUP
 	register_commands()
+	
+	invalid_tiles = $TileMap.get_used_cells()
 	
 func _process(delta):
 	if dragging:
@@ -22,8 +28,30 @@ func _process(delta):
 		draw_area(Vector2.ZERO, Vector2.ZERO, false)
 	
 func _unhandled_input(event):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
-		var camera_position = $YSort/Player/Camera2D.get_camera_screen_center() - get_viewport_rect().size / 2  
+	var camera_position = $YSort/Player/Camera2D.get_camera_screen_center() - get_viewport_rect().size / 2
+	if event is InputEventMouseMotion and can_place_tower:
+		$tower_placement.clear()
+		var tile = $TileMap.world_to_map(event.position + camera_position)
+		
+		if not tile in invalid_tiles:
+			$tower_placement.set_cell(tile.x, tile.y, 1)
+		else:
+			$tower_placement.set_cell(tile.x, tile.y, 0)
+	
+	elif event is InputEventMouseButton and can_place_tower and event.pressed:
+		var tile = $TileMap.world_to_map(event.position + camera_position)
+		
+		if not tile in invalid_tiles:
+			can_place_tower = false
+			$tower_placement.clear()
+			
+			invalid_tiles.append(tile)
+			
+			var tower_instance = tower.instance()
+			tower_instance.position = tile
+			add_child(tower_instance)
+	
+	elif event is InputEventMouseButton and event.button_index == BUTTON_LEFT: 
 		if event.pressed:
 			dragging = true
 			drag_start = event.position
@@ -42,6 +70,7 @@ func _unhandled_input(event):
 			query.transform = Transform2D(0, (drag_end + drag_start) / 2)
 			selected = space.intersect_shape(query)
 			print(selected)
+			
 
 			dragging = false
 	if event is InputEventMouseMotion and dragging:
@@ -123,3 +152,10 @@ func spawn_rover(name):
 	new_rover.position.x = 9741 + x_offset
 	new_rover.position.y = 9493 + y_offset
 	add_child_below_node(self.get_node("rovers_y_sort"), new_rover)
+	
+	
+
+
+func _on_Building1_pressed():
+	$tower_placement.clear()
+	can_place_tower = !can_place_tower

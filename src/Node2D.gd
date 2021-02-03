@@ -36,3 +36,13 @@ func _draw():
 	if dragging:
 		draw_rect(Rect2(drag_start, get_global_mouse_position() - drag_start),
 				Color(.5, .5, .5), false)
+				
+export(NodePath) var gui_path = "GUI"
+var health := 100
+onready var gui = get_node(gui_path)
+
+
+
+
+func _on_Building1_pressed():
+	pass # Replace with function body.

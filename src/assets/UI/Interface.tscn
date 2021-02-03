@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/UI/IronCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/UI/LifeBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/UI/Font/new_dynamicfont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/Objects/Building1.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/PNG/red_panel.png" type="Texture" id=5]
 
 [sub_resource type="Theme" id=1]
 
@@ -23,3 +26,38 @@ margin_bottom = 37.7479
 
 [node name="LifeBar" parent="." instance=ExtResource( 2 )]
 margin_right = 169.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_left = 6.0
+margin_top = 306.0
+margin_right = 797.0
+margin_bottom = 448.0
+texture = ExtResource( 5 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Building1" type="Button" parent="."]
+modulate = Color( 0.929412, 0.72549, 0.25098, 1 )
+margin_left = 27.9842
+margin_top = 317.67
+margin_right = 167.984
+margin_bottom = 429.67
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 3 )
+icon = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 33.7119
+margin_top = 412.035
+margin_right = 141.712
+margin_bottom = 435.035
+custom_fonts/font = ExtResource( 3 )
+text = "Building1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
