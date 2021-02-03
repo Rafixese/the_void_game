@@ -1,4 +1,5 @@
-[gd_scene load_steps=129 format=2]
+
+[gd_scene load_steps=131 format=2]
 
 [ext_resource path="res://assets/Tilesets/background.png" type="Texture" id=1]
 [ext_resource path="res://assets/Player/Player.tscn" type="PackedScene" id=2]
@@ -12,7 +13,9 @@
 [ext_resource path="res://assets/Tilesets/Mountain.png" type="Texture" id=10]
 [ext_resource path="res://assets/World/World.gd" type="Script" id=11]
 [ext_resource path="res://assets/UI/Interface.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/World/RedGreen.tres" type="TileSet" id=13]
+[ext_resource path="res://assets/rovers/rover.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/Objects/resources_bin/resources_bin.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/World/RedGreen.tres" type="TileSet" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 32, 128, 32, 32, 128, 32 )
@@ -3667,7 +3670,13 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 9830569, 0, 0 )
 
+[node name="res_bin" parent="." instance=ExtResource( 14 )]
+position = Vector2( 9996, 9519 )
+
 [node name="rovers_y_sort" type="YSort" parent="."]
+
+[node name="rover" parent="rovers_y_sort" instance=ExtResource( 13 )]
+position = Vector2( 9647.01, 9487.73 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -3698,3 +3707,13 @@ rotation = -0.261799
 [connection signal="pressed" from="YSort/Player/Node2D/Interface2/Building1" to="." method="_on_Building1_pressed"]
 
 [editable path="YSort/Player/Node2D/Interface2"]
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 9726.63, 9452.55 )
+
+[node name="Interface2" parent="YSort/Player" instance=ExtResource( 12 )]
+margin_left = -398.882
+margin_top = -221.545
+margin_right = -398.882
+margin_bottom = -221.545
+[connection signal="global_storage_changed" from="res_bin" to="YSort/Player/Interface2" method="_on_res_bin_global_storage_changed"]

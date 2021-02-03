@@ -198,7 +198,6 @@ start_node = "Idle"
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
-gui_path = NodePath("")
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.253598, -8.75747 )

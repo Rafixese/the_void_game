@@ -15,6 +15,8 @@ var building = StaticBody2D.new()
 onready var rectd = $Node2D/selection
 onready var tower = preload("res://assets/Objects/Building1.tscn")
 
+var global_storage = {"test_resource": 0}
+
 func _ready():
 	# CONSOLE SETUP
 	register_commands()
