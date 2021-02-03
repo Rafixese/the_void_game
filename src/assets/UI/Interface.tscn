@@ -15,7 +15,7 @@ anchor_bottom = 1.0
 margin_right = -800.0
 margin_bottom = -450.0
 theme = SubResource( 1 )
-script = ExtResource( 3 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
