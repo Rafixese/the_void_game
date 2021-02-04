@@ -12,16 +12,19 @@ var can_place_tower = false
 var invalid_tiles
 var building = StaticBody2D.new()
 
+signal global_storage_changed
+
 onready var rectd = $Node2D/selection
 onready var tower = load("res://assets/Objects/Building1.tscn")
 
-var global_storage = {"test_resource": 0}
+var global_storage = {"test_resource": 100}
 
 func _ready():
 	# CONSOLE SETUP
 	register_commands()
 	
 	invalid_tiles = $TileMap.get_used_cells()
+	supply(global_storage)
 	
 func _process(delta):
 	if dragging:
@@ -47,7 +50,8 @@ func _unhandled_input(event):
 		if not tile in invalid_tiles:
 			can_place_tower = false
 			$tower_placement.clear()
-			
+			var storage = {"test_resource": -100}
+			supply(storage)
 			invalid_tiles.append(tile)
 			
 			var tower_instance = tower.instance()
@@ -158,7 +162,16 @@ func spawn_rover(name):
 	new_rover.position.y = 9493 + y_offset
 	add_child_below_node(self.get_node("rovers_y_sort"), new_rover)
 	
+	
+
+func supply(supplies):
+	var world = get_tree().get_root().find_node("World", true, false)
+	for key in supplies:
+		world.global_storage[key] += supplies[key]
+	print(world.global_storage)
+	emit_signal("global_storage_changed")
+	
 func _on_Building1_pressed():
 	$tower_placement.clear()
-	if test_resource>99:
+	if global_storage["test_resource"] > 99:
 		can_place_tower = !can_place_tower
