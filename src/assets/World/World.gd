@@ -12,15 +12,17 @@ var can_place_tower = false
 var invalid_tiles
 var building = StaticBody2D.new()
 
-onready var rectd = $Node2D/selection
-onready var tower = preload("res://assets/Objects/Building1.tscn")
+signal global_storage_changed
 
-var global_storage = {"test_resource": 0}
+onready var rectd = $Node2D/selection
+onready var tower = load("res://assets/Objects/Building1.tscn")
+
+var global_storage = {"test_resource": 100}
 
 func _ready():
 	# CONSOLE SETUP
 	register_commands()
-	
+	emit_signal("global_storage_changed")
 	invalid_tiles = $TileMap.get_used_cells()
 	
 func _process(delta):
@@ -33,7 +35,7 @@ func _unhandled_input(event):
 	var camera_position = $YSort/Player/Camera2D.get_camera_screen_center() - get_viewport_rect().size / 2
 	if event is InputEventMouseMotion and can_place_tower:
 		$tower_placement.clear()
-		var tile = $TileMap.world_to_map(event.position + camera_position)
+		var tile = $tower_placement.world_to_map(event.position + camera_position)
 		
 		if not tile in invalid_tiles:
 			$tower_placement.set_cell(tile.x, tile.y, 1)
@@ -41,17 +43,21 @@ func _unhandled_input(event):
 			$tower_placement.set_cell(tile.x, tile.y, 0)
 	
 	elif event is InputEventMouseButton and can_place_tower and event.pressed:
-		var tile = $TileMap.world_to_map(event.position + camera_position)
+		var tile = $tower_placement.world_to_map(event.position + camera_position)
+		print(tile.x, ", ", tile.y)
 		
 		if not tile in invalid_tiles:
 			can_place_tower = false
 			$tower_placement.clear()
-			
+			global_storage["test_resource"] -= 100
+			emit_signal("global_storage_changed")
 			invalid_tiles.append(tile)
 			
 			var tower_instance = tower.instance()
 			tower_instance.position = tile
-			add_child(tower_instance)
+			tower_instance.position.x+=tile.x*31
+			tower_instance.position.y+=tile.y*31
+			$YSort.add_child(tower_instance)
 	
 	elif event is InputEventMouseButton and event.button_index == BUTTON_LEFT: 
 		if event.pressed:
@@ -155,6 +161,16 @@ func spawn_rover(name):
 	new_rover.position.y = 9493 + y_offset
 	add_child_below_node(self.get_node("rovers_y_sort"), new_rover)
 	
+	
+
+func supply(supplies):
+	var world = get_tree().get_root().find_node("World", true, false)
+	for key in supplies:
+		world.global_storage[key] += supplies[key]
+	print(world.global_storage)
+	emit_signal("global_storage_changed")
+	
 func _on_Building1_pressed():
 	$tower_placement.clear()
-	can_place_tower = !can_place_tower
+	if global_storage["test_resource"] > 99:
+		can_place_tower = !can_place_tower
