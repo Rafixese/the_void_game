@@ -3716,6 +3716,7 @@ position = Vector2( 183.436, -58.9493 )
 [node name="Rock3" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( -68.5654, 203.11 )
 rotation = -0.261799
+[connection signal="global_storage_changed" from="." to="YSort/Player/Node2D/Interface2" method="_on_res_bin_global_storage_changed"]
 [connection signal="global_storage_changed" from="res_bin" to="YSort/Player/Node2D/Interface2" method="_on_res_bin_global_storage_changed"]
 [connection signal="pressed" from="YSort/Player/Node2D/Interface2/Building1" to="." method="_on_Building1_pressed"]
 

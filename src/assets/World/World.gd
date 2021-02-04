@@ -22,9 +22,8 @@ var global_storage = {"test_resource": 100}
 func _ready():
 	# CONSOLE SETUP
 	register_commands()
-	
+	emit_signal("global_storage_changed")
 	invalid_tiles = $TileMap.get_used_cells()
-	supply(global_storage)
 	
 func _process(delta):
 	if dragging:
@@ -50,8 +49,8 @@ func _unhandled_input(event):
 		if not tile in invalid_tiles:
 			can_place_tower = false
 			$tower_placement.clear()
-			var storage = {"test_resource": -100}
-			supply(storage)
+			global_storage["test_resource"] -= 100
+			emit_signal("global_storage_changed")
 			invalid_tiles.append(tile)
 			
 			var tower_instance = tower.instance()
